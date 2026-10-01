@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="150" viewBox="0 0 520 150" role="img" aria-labelledby="title desc">
+  <title id="title">ETIC</title>
+  <desc id="desc">Logo isométrico de ETIC, Estrategia, Tecnología, Información y Consultoría</desc>
+  <defs>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8af3ff"/>
+      <stop offset="1" stop-color="#14b8c9"/>
+    </linearGradient>
+    <linearGradient id="left" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b6b96"/>
+      <stop offset="1" stop-color="#123d72"/>
+    </linearGradient>
+    <linearGradient id="right" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1ed2dd"/>
+      <stop offset="1" stop-color="#087b9e"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#071b36" flood-opacity=".3"/>
+    </filter>
+  </defs>
+  <g transform="translate(14 17)" filter="url(#shadow)">
+    <path d="M58 4 108 32 58 60 8 32Z" fill="url(#top)" stroke="#b8fbff" stroke-width="2"/>
+    <path d="M8 32v57l50 29V60Z" fill="url(#left)" stroke="#8eeef6" stroke-width="2"/>
+    <path d="M108 32v57l-50 29V60Z" fill="url(#right)" stroke="#8eeef6" stroke-width="2"/>
+    <path d="m58 29 18 10-18 10-18-10Z" fill="#07284d" opacity=".8"/>
+    <path d="M25 42v30l25 14M91 42v30L66 86" fill="none" stroke="#d4fdff" stroke-opacity=".7" stroke-width="2"/>
+    <circle cx="25" cy="42" r="3" fill="#fff"/><circle cx="91" cy="42" r="3" fill="#fff"/>
+    <circle cx="50" cy="86" r="3" fill="#fff"/><circle cx="66" cy="86" r="3" fill="#fff"/>
+  </g>
+  <g transform="translate(150 36)">
+    <text x="0" y="54" fill="#0a2342" font-family="Inter,Arial,sans-serif" font-size="62" font-weight="800" letter-spacing="7">ETIC</text>
+    <rect x="3" y="70" width="240" height="2" rx="1" fill="#18bccc"/>
+    <text x="3" y="96" fill="#31506f" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" letter-spacing="2.2">ESTRATEGIA · TECNOLOGÍA · DATOS</text>
+  </g>
+</svg>
