@@ -277,7 +277,20 @@ p{margin:0}
   to{transform:translate3d(-5%,7%,0) scale(1.12)}
 }
 
-.hero-inner{position:relative;max-width:900px}
+.hero-inner{
+  position:relative;max-width:900px;
+  transform:translate3d(0,var(--hero-shift,0px),0);
+  will-change:transform;
+}
+.hero-title.in{
+  transform:translate3d(0,calc(var(--hero-progress,0) * -34px),0);
+  opacity:calc(1 - var(--hero-progress,0) * .58);
+}
+.hero-sub.in,.hero-cta.in,.stats.in{
+  transform:translate3d(0,calc(var(--hero-progress,0) * -18px),0);
+  opacity:calc(1 - var(--hero-progress,0) * .42);
+}
+.hero-glow{will-change:transform}
 
 .eyebrow{
   display:inline-flex;align-items:center;gap:10px;
@@ -2462,10 +2475,29 @@ p{margin:0}
 
   /* ── Sticky header ──────────────────────────────────────── */
   var header = document.getElementById('header');
-  function onScroll() {
-    if (header) header.classList.toggle('stuck', window.scrollY > 24);
+  var hero = document.querySelector('.hero');
+  var heroInner = document.querySelector('.hero-inner');
+  var scrollTicking = false;
+
+  function updateScrollMotion() {
+    var y = window.scrollY || 0;
+    if (header) header.classList.toggle('stuck', y > 24);
+
+    if (!reduce && hero && heroInner) {
+      var distance = Math.max(hero.offsetHeight * .72, 1);
+      var progress = Math.min(Math.max(y / distance, 0), 1);
+      hero.style.setProperty('--hero-progress', progress.toFixed(3));
+      heroInner.style.setProperty('--hero-shift', (progress * 52).toFixed(1) + 'px');
+    }
+    scrollTicking = false;
   }
-  onScroll();
+
+  function onScroll() {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    window.requestAnimationFrame(updateScrollMotion);
+  }
+  updateScrollMotion();
   window.addEventListener('scroll', onScroll, { passive: true });
 
   /* ── Mobile nav ─────────────────────────────────────────── */
