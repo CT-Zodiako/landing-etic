@@ -1,0 +1,8 @@
+# Local Pi runtime state
+.atl/
+
+# Generated and installed files
+node_modules/
+dist/
+.astro/
+.DS_Store
